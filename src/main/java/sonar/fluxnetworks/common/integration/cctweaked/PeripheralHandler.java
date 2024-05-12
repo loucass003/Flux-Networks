@@ -17,6 +17,6 @@ public class PeripheralHandler implements IPeripheralProvider {
         BlockEntity tile = world.getBlockEntity(pos);
 
         if (tile instanceof TileFluxDevice fluxDevice) return LazyOptional.of(() -> new CCTPeripheral(fluxDevice));
-        return null;
+        return LazyOptional.empty();
     }
 }
